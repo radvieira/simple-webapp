@@ -1,0 +1,19 @@
+{
+  "name": "simple-webapp",
+  "version": "0.0.0",
+  "description": "a simple-webapp with angular, node, and java",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "radvieira",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt": "^0.4.2",
+    "grunt-contrib-jshint": "^0.8.0"
+  }
+}

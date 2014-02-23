@@ -1,0 +1,8 @@
+target/
+WebContent/
+.settings/
+node_modules/
+target-grunt/
+.project
+.springBeans
+.classpath
