@@ -13,10 +13,16 @@ module.exports = function(grunt) {
           document: true
         }
       }
+    },
+    karma: {
+        unit: {
+            configFile: 'karma.conf.js'
+        }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.registerTask('default', ['jshint']);
+  grunt.loadNpmTasks('grunt-karma');
+  grunt.registerTask('default', ['jshint', 'karma']);
 
 };

@@ -6,3 +6,4 @@ target-grunt/
 .project
 .springBeans
 .classpath
+test-results.xml
