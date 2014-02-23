@@ -18,11 +18,32 @@ module.exports = function(grunt) {
         unit: {
             configFile: 'karma.conf.js'
         }
+    },
+    useminPrepare: {
+        html: 'src/main/webapp/index.jsp',
+        options: {
+            dest: 'target/simple-webapp'
+        }
+    },    
+    usemin: {
+        html: 'target/simple-webapp/index.jsp'
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  
   grunt.registerTask('default', ['jshint', 'karma']);
+  grunt.registerTask('build', [
+                               'jshint', 
+                               'karma', 
+                               'useminPrepare',
+                               'usemin', 
+                               'concat', 
+                               'uglify'
+                               ]);
 
 };

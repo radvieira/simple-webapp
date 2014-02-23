@@ -37,11 +37,13 @@
 		<div class="container">
 			<h2>Contact <span data-ng-bind="contact.firstName"></span></h2>
 		</div>
-		</script>		
+		</script>
+		<!-- build:js resources/simple-webapp.min.js -->	
 		<script src="resources/javascript/vendor/angular-1.2.13.js"></script>
 		<script src="resources/javascript/vendor/angular-route-1.2.13.js"></script>
 		<script src="resources/javascript/app.js"></script>
 		<script src="resources/javascript/contacts/ContactsApp.js"></script>
+		<!-- endbuild -->
 	</body>
 
 </html>

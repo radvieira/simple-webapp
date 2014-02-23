@@ -60,6 +60,26 @@
 				</configuration>
 			</plugin>
 			<plugin>
+			     <!-- 
+			         binding the exploded goal to the prepare-package for later processing of the index.jsp
+			     -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+				   <useCache>true</useCache>
+				</configuration>
+				<executions>
+					<execution>
+					   <id>prepare-war</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>exploded</goal>
+						</goals>
+					</execution>
+				</executions>				
+			</plugin>			
+			<plugin>
 				<groupId>pl.allegro</groupId>
 				<artifactId>grunt-maven-plugin</artifactId>
 				<version>1.2.0</version>
@@ -83,11 +103,25 @@
 				</configuration>
 				<executions>
 					<execution>
+					   <!-- during maven's test phase run the "default" Grunt target -->
+					   <id>grunt-default</id>
+					   <phase>test</phase>
 						<goals>
 							<goal>create-resources</goal>
 							<goal>npm</goal>
 							<goal>grunt</goal>
 						</goals>
+					</execution>
+					<execution>
+					   <!-- during maven's ?? phase run the "build" Grunt target -->
+					   <id>grunt-build</id>
+					   <phase>prepare-package</phase>
+                        <configuration>
+                            <target>build</target>
+                        </configuration>
+					   <goals>
+					       <goal>grunt</goal>
+					   </goals>
 					</execution>
 				</executions>
 			</plugin>

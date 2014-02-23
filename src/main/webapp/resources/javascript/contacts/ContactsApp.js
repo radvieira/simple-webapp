@@ -49,13 +49,13 @@ angular.module('Contacts').provider('ContactService', function() {
 	
 	return {
 		
-		$get: function(_$http_, _$q_) {
+		$get: ['$http', '$q', function(_$http_, _$q_) {
 			
 			$http = _$http_;
 			$q = _$q_;
 			
 			return contactService;
-		}
+		}]
 	
 	};
 	

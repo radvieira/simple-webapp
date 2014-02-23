@@ -7,3 +7,4 @@ target-grunt/
 .springBeans
 .classpath
 test-results.xml
+.tmp
